@@ -1,4 +1,4 @@
 allure-pytest==2.8.6
 allure-python-commons==2.8.6
 pytest==4.5.0
-PyYAML==3.12
+PyYAML==5.1
