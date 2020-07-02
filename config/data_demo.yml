@@ -1,0 +1,17 @@
+test_add_param_demo:
+- ["测试中文", True]
+- ["test", True]
+- ["123456", True]
+- ["测试中文yyyy123456", True]
+
+
+test_login_params:
+- ["admin", "123456", True]
+- ["admin", "1234xxx", False]
+- ["admin", "", False]
+
+test_add_canshuhua:
+- ["中文", True, "编辑文章分类，输入中文，编辑成功"]
+- ["yingwen", True, "编辑文章分类，输入英文，编辑成功"]
+- ["1234", True, "编辑文章分类，输入数字，编辑成功"]
+- ["1234", True, "编辑文章分类，输入数字，编辑成功"]
