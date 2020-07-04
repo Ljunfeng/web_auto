@@ -212,13 +212,15 @@ class Base():
             print("alert不存在")
         else:
             return r
-# 通过2张图片的相似度断言图片是否一样的图，觉得好玩写的
+
     def move_to_element(self, locator):
         """鼠标悬停操作"""
         if not isinstance(locator, tuple):
             raise LocatorTypeError("参数类型错误，locator必须是元祖类型：loc = ('id','value1')")
         ele = self.find(locator)
         ActionChains(self.driver).move_to_element(ele).perform()
+
+    # 通过2张图片的相似度断言图片是否一样的图，觉得好玩写的
 
     def image_cut(self, locator):
         '''整图裁剪为小图'''
