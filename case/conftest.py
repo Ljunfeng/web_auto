@@ -13,7 +13,7 @@ def driver(request):
         _driver = webdriver.Chrome()
     else:
         # linux启动
-        chrome_options = Options()
+        chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度和高度
         chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在报错问题
         chrome_options.add_argument('--disable-dev-shm-usage')
