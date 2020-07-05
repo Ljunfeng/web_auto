@@ -4,16 +4,22 @@ from pages.login_page import LoginPage
 from selenium.webdriver.chrome.options import Options
 import platform
 import time
-print(platform.system())
+
+from xvfbwrapper import Xvfb
+
+
 
 @pytest.fixture(scope="session")
 def driver(request):
     '''定义全局driver'''
+    vdisplay = Xvfb()
+    vdisplay.start()
+
     if platform.system() == 'Windows':
         _driver = webdriver.Chrome()
     else:
         # linux启动
-        chrome_options = webdriver.ChromeOptions()
+        chrome_options = Options()
         chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度和高度
         chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在报错问题
         chrome_options.add_argument('--disable-dev-shm-usage')
@@ -30,6 +36,8 @@ def driver(request):
         '''测试用例完成后，执行终结函数'''
         time.sleep(5)
         _driver.quit()
+
+        vdisplay.stop()
 
     request.addfinalizer(end)
     return _driver
