@@ -12,8 +12,6 @@ from xvfbwrapper import Xvfb
 @pytest.fixture(scope="session")
 def driver(request):
     '''定义全局driver'''
-    vdisplay = Xvfb()
-    vdisplay.start()
 
     if platform.system() == 'Windows':
         _driver = webdriver.Chrome()
@@ -36,8 +34,6 @@ def driver(request):
         '''测试用例完成后，执行终结函数'''
         time.sleep(5)
         _driver.quit()
-
-        vdisplay.stop()
 
     request.addfinalizer(end)
     return _driver
