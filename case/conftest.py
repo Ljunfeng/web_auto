@@ -5,10 +5,6 @@ from selenium.webdriver.chrome.options import Options
 import platform
 import time
 
-from xvfbwrapper import Xvfb
-
-
-
 @pytest.fixture(scope="session")
 def driver(request):
     '''定义全局driver'''
