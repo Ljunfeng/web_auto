@@ -21,7 +21,7 @@ def driver(request):
         chrome_options.add_argument('--headless')  # 无界面
 
         # _driver = webdriver.Chrome()
-        _driver = webdriver.Chrome(chrome_options=chrome_options)
+        _driver = webdriver.Chrome(options=chrome_options)
 
 
     _driver.maximize_window()  # 最大化
