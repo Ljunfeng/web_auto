@@ -9,7 +9,6 @@ def login_first():
     yield
     print("数据清理，执行你的数据库清理")
 
-
 @pytest.fixture(scope="session")
 def fuction_2():
     '''前置2'''
@@ -22,11 +21,7 @@ def test_1(login_first):
     time.sleep(1)
 
 
-def test_2(login_first):
-    print("用例222222222222")
-    assert 1 == 2
-    time.sleep(1)
 
-def test_3(login_first):
+def test_2(login_first):
     print("用例3333333333")
     time.sleep(1)
