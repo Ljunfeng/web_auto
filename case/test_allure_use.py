@@ -1,6 +1,7 @@
 import pytest
 import allure
 
+
 @pytest.fixture()
 def login_fixture():
     print("先登录")
@@ -9,13 +10,13 @@ def login_fixture():
     print("用例测试完成之后数据清理")
 
 
-
 def step_1():
     print("步骤1")
 
 
 def step_2():
     print("步骤2")
+
 
 def step_3():
     print("步骤3")
@@ -27,7 +28,6 @@ def step_4():
 
 @allure.feature("功能点：编辑文章分类页面")
 class TestDemo():
-
 
     @allure.story("用例1：xxxxxxxxxxxxx")
     @allure.title("编辑文章分类，输入中文，编辑成功")
@@ -56,5 +56,4 @@ class TestDemo():
     def test_case4(self):
         step_1()
         step_3()
-        assert  1==2
-
+        assert 1 == 2
